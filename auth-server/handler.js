@@ -8,15 +8,15 @@ module.exports.getAccessToken = async event => {
     + '?client_id=10l1jtlp01s1lj83me59sso5kh'
     + '&client_secret=aha1gmahdtqqlfbl859r9hpdhr'
     + '&grant_type=authorization_code'
-    + '&redirect_uri=https://cruebee.github.io/'
-    + '&code=4161feb4f76cbeea20a0d433c0f98de7';
+    + '&redirect_uri=https://cruebee.github.io/meetemup/'
+    + '&code=' + event.pathParameters.code;
 
   const info = await axios.post(MEETUP_OAUTH_URL);
 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      access_token: info.data.acces_token,
+      access_token: info.data.access_token,
       refresh_token: info.data.refresh_token,
     }),
   };
