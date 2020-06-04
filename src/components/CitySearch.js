@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 class CitySearch extends Component {
 
   state = {
-    query: '',
+    query: 'Munich',
+  }
+
+  handleInputChanged = (event) => {
+    const value = event.target.value;
+    this.setState({ query: value });
   }
 
   render() {
@@ -13,6 +18,7 @@ class CitySearch extends Component {
           type="text"
           className="city"
           value={this.state.query}
+          onChange={this.handleInputChanged}
         >
         </input>
         <ul className="suggestions">
