@@ -5,7 +5,13 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <input className="CitySearch_input"></input>
+        <input
+          type="text"
+          className="city"
+        >
+        </input>
+        <ul className="suggestions">
+        </ul>
       </div>
     );
   }
