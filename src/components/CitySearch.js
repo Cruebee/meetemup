@@ -32,6 +32,10 @@ class CitySearch extends Component {
     this.setState({ query: value });
   }
 
+  handleItemClicked = (value) => {
+    this.setState({ query: value });
+  }
+
   render() {
     return (
       <div className="CitySearch">
@@ -44,7 +48,11 @@ class CitySearch extends Component {
         </input>
         <ul className="suggestions">
           {this.state.suggestions.map(item =>
-            <li key={item.name_string}>{item.name_string}</li>
+            <li
+              key={item.name_string}
+              onClick={() => this.handleItemClicked(item.name_string)}
+            >{item.name_string}
+            </li>
           )}
         </ul>
       </div>
