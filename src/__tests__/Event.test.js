@@ -17,8 +17,4 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
-  test('render event description', () => {
-    expect(EventWrapper.find('.event').children()).toHaveLength(1);
-  });
-
-})
+});

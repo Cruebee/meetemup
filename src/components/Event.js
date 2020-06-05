@@ -6,9 +6,7 @@ class Event extends Component {
 
     return (
       <div className="event">
-        <div className="description">
-
-        </div>
+        <div></div>
       </div>
     );
   }
