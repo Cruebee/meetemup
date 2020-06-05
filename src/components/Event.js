@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 class Event extends Component {
   state = {
-    events: [],
+
     showDetails: false,
   }
 
   render() {
     return (
-      <div className="eventContainer">
-        <ul className="events">
+      <div>
+        <ul>
           <li className="event"></li>
         </ul>
       </div>

@@ -14,4 +14,5 @@ describe('<EventList /> component', () => {
     EventListWrapper.setState({ events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }] });
     expect(EventListWrapper.find(Event)).toHaveLength(4);
   });
+
 })
