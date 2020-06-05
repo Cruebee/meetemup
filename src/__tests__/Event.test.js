@@ -13,4 +13,8 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
+  test('render events with details hidden by default', () => {
+    expect(EventWrapper.state('showDetails')).toBe(false);
+  });
+
 })
