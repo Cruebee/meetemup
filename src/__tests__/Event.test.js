@@ -25,4 +25,8 @@ describe('<Event /> component', () => {
     }
   });
 
+  test('render evend details button', () => {
+    expect(EventWrapper.find('.eventButton')).toHaveLength(1);
+  });
+
 })
