@@ -9,8 +9,16 @@ describe('<Event /> component', () => {
     EventWrapper = shallow(<Event />);
   });
 
-  test('render event component container', () => {
+  test('render event component', () => {
     expect(EventWrapper).toHaveLength(1);
+  });
+
+  test('render event name', () => {
+    expect(EventWrapper.find('.event')).toHaveLength(1);
+  });
+
+  test('render event description', () => {
+    expect(EventWrapper.find('.event').children()).toHaveLength(1);
   });
 
 })
