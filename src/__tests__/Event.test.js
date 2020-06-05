@@ -10,23 +10,7 @@ describe('<Event /> component', () => {
   });
 
   test('render event component container', () => {
-    expect(EventWrapper.find('.event')).toHaveLength(1);
-  });
-
-  test('render events with details hidden by default', () => {
-    expect(EventWrapper.state('showDetails')).toBe(false);
-  });
-
-  test('render events correctly', () => {
-    const events = EventWrapper.state('events');
-    expect(EventWrapper.find('.eventDetails li')).toHaveLength(events.length);
-    for (let i = 0; i < events.length; i += 1) {
-      expect(EventWrapper.find('.eventDetails li').at(i).text()).toBe(events[i].name);
-    }
-  });
-
-  test('render evend details button', () => {
-    expect(EventWrapper.find('.eventButton')).toHaveLength(1);
+    expect(EventWrapper).toHaveLength(1);
   });
 
 })
