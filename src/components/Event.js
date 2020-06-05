@@ -7,10 +7,12 @@ class Event extends Component {
 
   render() {
     return (
-      <div>
-
+      <div className="eventContainer">
+        <ul className="events">
+          <li className="event"></li>
+        </ul>
       </div>
-    )
+    );
   }
 }
 

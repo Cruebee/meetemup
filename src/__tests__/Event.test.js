@@ -6,7 +6,7 @@ describe('<Event /> component', () => {
 
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event event={events} />);
+    EventWrapper = shallow(<Event />);
   });
 
   test('render event component container', () => {
