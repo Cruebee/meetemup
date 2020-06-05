@@ -19,9 +19,9 @@ describe('<Event /> component', () => {
 
   test('render events correctly', () => {
     const events = EventWrapper.state('events');
-    expect(EventWrapper.find('.events li')).toHaveLength(events.length);
+    expect(EventWrapper.find('.eventDetails li')).toHaveLength(events.length);
     for (let i = 0; i < events.length; i += 1) {
-      expect(EventWrapper.find('.events li').at(i).text()).toBe(events[i].name);
+      expect(EventWrapper.find('.eventDetails li').at(i).text()).toBe(events[i].name);
     }
   });
 
