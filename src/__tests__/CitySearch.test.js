@@ -64,4 +64,8 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.state('query')).toBe('Munich, Germany');
   });
 
+  test('render CitySearch input label', () => {
+    expect(CitySearchWrapper.find('.CitySearch label')).toHaveLength(1);
+  });
+
 });
