@@ -4,6 +4,7 @@ import App from '../App';
 import EventList from '../components/EventList';
 import CitySearch from '../components/CitySearch';
 import NumberOfEvents from '../components/NumberOfEvents';
+import { mockEvents } from '../mock_events/mock-events';
 
 describe('<App /> component', () => {
   let AppWrapper;
@@ -31,6 +32,10 @@ describe('<App /> integration', () => {
     AppWrapper = mount(<App />);
   });
 
+  afterAll(() => {
+    AppWrapper.unmount();
+  });
+
   test('get list of events after user selects a city', async () => {
     AppWrapper.instance().updateEvents = jest.fn();
     AppWrapper.instance().forceUpdate();
@@ -38,6 +43,13 @@ describe('<App /> integration', () => {
     CitySearchWrapper.instance().handleItemClicked('value', 1.1, 1.2);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledTimes(1);
     expect(AppWrapper.instance().updateEvents).toHaveBeenCalledWith(1.1, 1.2);
+  });
+
+  test('change state after get list of events', async () => {
+    const AppWrapper = shallow(<App />);
+    AppWrapper.instance().updateEvents(1.1, 1.2);
+    await AppWrapper.update();
+    expect(AppWrapper.state('events')).toEqual(mockEvents.events);
   });
 
 });
