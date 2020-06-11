@@ -17,8 +17,4 @@ describe('EventA /> component', () => {
     expect(EventAWrapper.find('.name').text()).toBe('Yoga in the Park');
   });
 
-  test('render EventA component with correct time', () => {
-    expect(EventAWrapper.find('.time').text()).toBe('17:00');
-  });
-
 });

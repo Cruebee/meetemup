@@ -5,7 +5,6 @@ class EventA extends Component {
   state = {
     event: {
       name: "Yoga in the Park",
-      time: "17:00"
     }
   }
 
