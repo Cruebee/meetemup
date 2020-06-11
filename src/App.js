@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <EventList />
-        <CitySearch />
+        <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents />
       </div>
     );

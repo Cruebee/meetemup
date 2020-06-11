@@ -5,7 +5,7 @@ import CitySearch from '../components/CitySearch';
 describe('<CitySearch /> component', () => {
   let CitySearchWrapper;
   beforeAll(() => {
-    CitySearchWrapper = shallow(<CitySearch />)
+    CitySearchWrapper = shallow(<CitySearch updateEvents={() => { }} />);
   });
 
   test('render text input', () => {
@@ -59,7 +59,6 @@ describe('<CitySearch /> component', () => {
         }
       ]
     });
-
     CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
     expect(CitySearchWrapper.state('query')).toBe('Munich, Germany');
   });
