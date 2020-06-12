@@ -1,4 +1,4 @@
-import { mockEvents } from "./mock_events/mock-events";
+import { mockEvents } from './mock_events/mock-events';
 
 async function getSuggestions(query) {
   return [

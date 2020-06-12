@@ -6,109 +6,88 @@ describe('<Event /> component', () => {
 
   let EventWrapper;
   beforeAll(() => {
-    EventWrapper = shallow(<Event />);
-  });
-
-  test('render event component', () => {
-    expect(EventWrapper).toHaveLength(1);
-  });
-
-  test('render event wrapper', () => {
-    expect(EventWrapper.find('.event')).toHaveLength(1);
-  });
-
-  test('check event wrapper only renders overview ', () => {
-    expect(EventWrapper.find('.event').children()).toHaveLength(1);
-  });
-
-  test('render eventOverview', () => {
-    expect(EventWrapper.find('.eventOverview')).toHaveLength(1);
-  });
-
-  test('check eventOverview children render properly', () => {
-    expect(EventWrapper.find('.eventOverview').children()).toHaveLength(3);
-  });
-
-  test('check that eventDetails children are rendered', () => {
-    EventWrapper.setState({
-      showDetails: true
-    });
-    expect(EventWrapper.find('.eventDetails--description')).toHaveLength(1);
-  });
-
-  test('check that show/hide details button is rendered', () => {
-    expect(EventWrapper.find('.eventOverview button')).toHaveLength(1);
-  });
-
-  test('check clicking details button shows event details', () => {
-    EventWrapper.setState({
-      showDetails: false
-    });
-    EventWrapper.find('.eventOverview button').simulate('click');
-    expect(EventWrapper.state('showDetails')).toBe(true);
-  });
-
-  test('set mock-data as state', () => {
-    EventWrapper.setState({
-      event: {
-        created: 1589994536000,
-        duration: 3600000,
-        fee: {
-          accepts: "cash",
-          amount: 15,
-          currency: "USD",
-          description: "",
-          label: "Price",
-          required: false
-        },
-        id: "270768263",
-        name: "Yoga in the Park",
-        rsvp_limit: 9,
+    EventWrapper = shallow(<Event event={
+      {
+        created: 15911614589000,
+        duration: 720000,
+        id: '271160041',
+        name: 'Saturday morning squash in Parkclub Nymphenburg',
+        rsvp_limit: 3,
         date_in_series_pattern: false,
-        status: "upcoming",
-        time: 1593041400000,
-        local_date: "2020-06-24",
-        local_time: "17:30",
-        updated: 1589994536000,
-        utc_offset: -21600000,
+        status: 'upcoming',
+        time: 1592063100000,
+        local_date: '2020-06-13',
+        local_time: '10:15',
+        updated: 159416321000,
+        utc_offset: 7200000,
         waitlist_count: 0,
-        yes_rsvp_count: 1,
+        yes_rsvp_count: 3,
         venue: {
-          id: 26920094,
-          name: "Spring Park",
-          lat: 40.56135177612305,
-          lon: -105.07218170166016,
-          repinned: true,
-          address_1: "2100 Matthews Street",
-          city: "Fort Collins",
-          country: "us",
-          localized_country_name: "USA",
-          zip: "80525",
-          state: "CO"
+          id: 2578898,
+          name: 'Park Club Nymphenburg',
+          lat: 48.160325452,
+          lon: 11.515665862,
+          repinned: false,
+          address_1: 'Stievestrasse 15, 80638',
+          city: 'München',
+          country: 'de',
+          localized_country_name: 'Germany'
         },
-        is_online_event: false,
         group: {
-          created: 1588639842000,
-          name: "The Mindful Movement Community",
-          id: 33690668,
-          join_mode: "open",
-          lat: 40.529998779296875,
-          lon: -105.04000091552734,
-          urlname: "The-Mindful-Movement-Community",
-          who: "Members",
-          localized_location: "Fort Collins, CO",
-          state: "CO",
-          country: "us",
-          region: "en_US",
-          timezone: "US/Mountain"
+          name: 'Casual Squash Games'
         },
-        link: "https://www.meetup.com/The-Mindful-Movement-Community/events/270768263/",
-        description: "<p>** Finish your reservation using the link below. After signing up in the link provided, your spot will be held **<br/></p> <p>Warm weather signals it's time to head outside. Connect with yourself, your community, and nature in this all levels yoga class designed to leave you feeling welcomed, supported, and just the right amount of challenged. Teachers provide space for you to take rest and explore different variations of a pose, so you can choose any option that's right for you.</p> <p>Please bring your own mat and props. If you don't have a mat, a blanket would work just fine.</p> <p>During this time, we will practice social distancing guidelines, such as maintaining six feet separation. If within six feet for things like check in, we will wear a mask. Registration is required since participation is capped at 9 students. If plans change, please update your registration so people on the wait list are able to participate.</p> <p>** Finish your reservation using the link below. After signing up in the link provided, your spot will be held **<br/></p> ",
-        visibility: "public",
+        link: 'https://www.meetup.com/Casual-Squash-Games/events/271160041/',
+        description: '<p>All levels are welcome!</p> <p>We meet at the entrance of Parkclub Nymphenburg at 10:00.<br/>There is 1 court (2-3 people) booked from 10:15 till 11:45<br/>If there are no slots left, use waitlist, we can try to book another court</p> <p>Important: Cancellation is free for 48 hours in advance. So if you RSVP and cannot come, please let me know, so I can cancel the court.<br/>Cancellations on short notice should be paid, to cover court costs.</p>',
+        visibility: 'public',
         member_pay_fee: false
       }
-    });
-    expect(EventWrapper.state('event').name).toBe('Yoga in the Park');
+    } />
+    );
+
+  });
+
+  beforeEach(() => {
+    EventWrapper.setState({ expanded: false });
+  });
+
+  test('render information about events', () => {
+    expect(EventWrapper.find('.Event')).toHaveLength(1);
+    expect(EventWrapper.find('.time')).toHaveLength(1);
+    expect(EventWrapper.find('.name')).toHaveLength(1);
+    expect(EventWrapper.find('.going')).toHaveLength(1);
+  });
+
+  test('render correct information about events', () => {
+    expect(EventWrapper.find('.time').text()).toEqual('10:15 - 2020-06-13');
+    expect(EventWrapper.find('.name').text()).toEqual('Saturday morning squash in Parkclub Nymphenburg');
+    expect(EventWrapper.find('.going').text()).toEqual('3 people are attending');
+  });
+
+  test('expand additional event detals when user clicks on "Details" button', () => {
+    EventWrapper.find('.details-button').simulate('click');
+    expect(EventWrapper.find('.event-details')).toHaveLength(1);
+  });
+
+  test('collapse additional event details when user clicks on "Details" button', () => {
+    EventWrapper.setState({ expanded: true });
+    EventWrapper.find('.details-button').simulate('click');
+    expect(EventWrapper.find('.event-details')).toHaveLength(0);
+  });
+
+  test('render additional event details', () => {
+    EventWrapper.setState({ expanded: true });
+    expect(EventWrapper.find('.event-details .address')).toHaveLength(1);
+    expect(EventWrapper.find('.event-details .visibility')).toHaveLength(1);
+    expect(EventWrapper.find('.event-details .link')).toHaveLength(1);
+    expect(EventWrapper.find('.event-details .description')).toHaveLength(1);
+  });
+
+  test('render additonal event details with correct info', () => {
+    EventWrapper.setState({ expanded: true });
+    expect(EventWrapper.find('.event-details .address').text()).toEqual('Park Club Nymphenburg, Stievestrasse 15, 80638, München, Germany'); // this should display all the information a user would need to find this location, these are all venue attributes: event.venue.name, event.venue.address_1, event.venue.city, event.venue.localized_country_name.
+    expect(EventWrapper.find('.event-details .visibility').text()).toEqual('public');
+    expect(EventWrapper.find('.event-details .link').prop('href')).toEqual('https://www.meetup.com/Casual-Squash-Games/events/271160041/');
+    expect(EventWrapper.find('.event-details .description').html()).toEqual('<div class=\"description\"><p>All levels are welcome!</p> <p>We meet at the entrance of Parkclub Nymphenburg at 10:00.<br/>There is 1 court (2-3 people) booked from 10:15 till 11:45<br/>If there are no slots left, use waitlist, we can try to book another court</p> <p>Important: Cancellation is free for 48 hours in advance. So if you RSVP and cannot come, please let me know, so I can cancel the court.<br/>Cancellations on short notice should be paid, to cover court costs.</p></div>');
   });
 
 });

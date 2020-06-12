@@ -3,29 +3,40 @@ import React, { Component } from 'react';
 class Event extends Component {
 
   state = {
-    event: {},
-    showDetails: false
+    expanded: false,
   }
 
   handleShowDetails = () => {
-    this.setState({ showDetails: true });
+    this.setState(prevState => ({
+      expanded: !prevState.expanded
+    }));
   }
 
   render() {
-    const showDetails = this.state.showDetails;
+    const event = this.props.event;
 
     return (
-      <div className="event">
-        <div className="eventOverview">
-          <p className="eventOverview--name">{this.state.event.name}</p>
-          <p className="eventOverview--localDate">{this.state.event.local_date}</p>
-          <button onClick={() => this.handleShowDetails()}>Event Details</button>
-        </div>
-        {showDetails &&
-          <div className="eventDetails">
-            <p className="eventDetails--description">{this.state.event.description}</p>
+      <div className="Event">
+        <p className="time">{event.local_time} - {event.local_date}</p>
+        <p className="name">{event.name}</p>
+        <p className="going">{event.yes_rsvp_count} people are attending</p>
+        {this.state.expanded &&
+          <div className="event-details">
+            {event.venue && event.venue.name &&
+              <p className='address'>
+                {event.venue.name
+                  + ', ' + event.venue.address_1
+                  + ', ' + event.venue.city
+                  + ', ' + event.venue.localized_country_name
+                }
+              </p>
+            }
+            <div className="description" dangerouslySetInnerHTML={{ __html: event.description }} />
+            <p className="visibility">{event.visibility}</p>
+            <a className="link" href={event.link}>Event Link</a>
           </div>
         }
+        <button className="details-button" onClick={this.handleShowDetails}>Details</button>
       </div>
     );
   }
