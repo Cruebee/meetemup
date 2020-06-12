@@ -1,4 +1,5 @@
 const mockEvents = {
+
   city: {
     id: 1007700,
     city: 'München',
