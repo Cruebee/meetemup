@@ -28,5 +28,4 @@ async function getEvents(lat, lon) {
   return mockEvents.events;
 }
 
-export { getEvents };
-export { getSuggestions };
+export { getSuggestions, getEvents };
