@@ -11,11 +11,13 @@ class CitySearch extends Component {
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
-    getSuggestions(value).then(suggestions => this.setState({ suggestions }));
+    getSuggestions(value).then(suggestions => {
+      this.setState({ suggestions });
+    });
   }
 
   handleItemClicked = (value, lat, lon) => {
-    this.setState({ query: value });
+    this.setState({ query: value, suggestions: [] });
     this.props.updateEvents(lat, lon);
   }
 
@@ -28,6 +30,7 @@ class CitySearch extends Component {
           className="city"
           value={this.state.query}
           onChange={this.handleInputChanged}
+          placeholder="Change City"
         >
         </input>
         <ul className="suggestions">
