@@ -99,5 +99,4 @@ describe('<CitySearch /> integration', () => {
       }
     ]);
   });
-
 });
