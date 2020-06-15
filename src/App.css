@@ -16,11 +16,15 @@ p {
   margin: 5px 0;
 }
 
+::placeholder {
+  color: darkslategrey;
+}
+
 input[type="text"], input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid green;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -29,6 +33,7 @@ input[type="text"], input[type="number"] {
 
 .city {
   width: 250px;
+  text-align: left;
 }
 
 .CitySearch {
@@ -44,9 +49,10 @@ input[type="text"], input[type="number"] {
 }
 
 .suggestions > li {
+  color: white;
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: teal;
   cursor: default;
 }
 
@@ -57,19 +63,24 @@ input[type="text"], input[type="number"] {
 
 
 .suggestions > li:hover {
-  background-color: #BCDCDB;
+  color: white;
+  background-color: green;
 }
 
 .Event {
-  padding: 10px 10px 20px;
-  margin-bottom: 10px;
+  min-height: 10rem;
+  padding: 0.5rem 0.5rem 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  background-color: lightgrey;
 }
 
-.details-btn {
+.details-button {
+  font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -77,9 +88,13 @@ input[type="text"], input[type="number"] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  width: 5rem;
+  min-height: 3rem;
+  background-color: yellowgreen;
 }
 
 .name {
+  font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont;
   font-size: 18px;
   font-weight: 600;
 }
@@ -91,14 +106,39 @@ input[type="text"], input[type="number"] {
 
 .going, .visibility {
   font-style: italic;
+  color: red;
 }
 
 .description {
   overflow-x: hidden;
 }
 
-.number-of-events {
+.number-of-events__input {
   width: 80px;
   margin: 20px 0 50px;
-  text-align: right;
+  padding: 0;
+  text-align: left;
+}
+
+.search-label {
+  color: white;
+  font-size: 25px;
+}
+
+.number-label {
+  color: white;
+  font-size: 18px;
+}
+
+.EventList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 1rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .EventList {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
