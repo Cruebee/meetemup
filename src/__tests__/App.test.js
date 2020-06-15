@@ -63,7 +63,7 @@ describe('<App /> integration', () => {
   test('render correct list of events', () => {
     AppWrapper = mount(<App />);
     AppWrapper.setState({ events: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 },] });
-    expect(AppWrapper.find('Event')).toHaveLength(4);
+    expect(AppWrapper.find('.Event')).toHaveLength(4);
   });
 
 });

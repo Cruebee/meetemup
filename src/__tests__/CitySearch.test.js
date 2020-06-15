@@ -16,6 +16,10 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
   });
 
+  test('render CitySearch input label', () => {
+    expect(CitySearchWrapper.find('.CitySearch label')).toHaveLength(1);
+  });
+
   test('render text input correctly', () => {
     const query = CitySearchWrapper.state('query');
     expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
@@ -65,10 +69,6 @@ describe('<CitySearch /> component', () => {
     expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(0);
   });
 
-  test('render CitySearch input label', () => {
-    expect(CitySearchWrapper.find('.CitySearch label')).toHaveLength(1);
-  });
-
 });
 
 describe('<CitySearch /> integration', () => {
@@ -99,4 +99,5 @@ describe('<CitySearch /> integration', () => {
       }
     ]);
   });
+
 });
