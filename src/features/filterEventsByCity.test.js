@@ -1,0 +1,57 @@
+import { loadFeature, defineFeature } from 'jest-cucumber';
+
+const feature = loadFeature('./src/features/filterEventsByCity.feature');
+
+defineFeature(feature, test => {
+
+  test('By default, when user hasn\'t searched for a city, show upcoming events based on the user\'s location', ({ given, when, then }) => {
+    given('user hasn\'t searched for any city', () => {
+
+    });
+
+    when('the user opens the app', () => {
+
+    });
+
+    then('the user should see the list of upcoming events from their location', () => {
+
+    });
+  });
+
+  test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
+    given('the main page is open', () => {
+
+    });
+
+    when('the user starts typing in the textbox', () => {
+
+    });
+
+    then('the user should receive a list of cities (suggestions) that match what they\'ve typed', () => {
+
+    });
+  });
+
+  test('User can select a city from the list of suggestions', ({ given, and, when, then }) => {
+    given('a user is typing “Denver” in the city textbox', () => {
+
+    });
+
+    and('the list of suggested cities is showing', () => {
+
+    });
+
+    when('the user selects a city (e.g., “Denver, Colorado”) from the list', () => {
+
+    });
+
+    then('their city should be changed to the selected city (i.e., “Denver, Colorado”)', () => {
+
+    });
+
+    and('the user should receive a list of upcoming events for that city', () => {
+
+    });
+  });
+
+});
