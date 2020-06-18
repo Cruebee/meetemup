@@ -36,7 +36,7 @@ class Event extends Component {
             <a className="link" href={event.link}>Event Link</a>
           </div>
         }
-        <button className="details-button" onClick={this.handleShowDetails}>Details</button>
+        <button className="details-btn" onClick={this.handleShowDetails}>Details</button>
       </div>
     );
   }

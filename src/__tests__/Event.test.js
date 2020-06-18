@@ -64,13 +64,13 @@ describe('<Event /> component', () => {
   });
 
   test('expand additional event detals when user clicks on "Details" button', () => {
-    EventWrapper.find('.details-button').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
     expect(EventWrapper.find('.extra')).toHaveLength(1);
   });
 
   test('collapse additional event details when user clicks on "Details" button', () => {
     EventWrapper.setState({ expanded: true });
-    EventWrapper.find('.details-button').simulate('click');
+    EventWrapper.find('.details-btn').simulate('click');
     expect(EventWrapper.find('.extra')).toHaveLength(0);
   });
 

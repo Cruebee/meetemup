@@ -91,7 +91,7 @@ input[type="text"], input[type="number"] {
   background-color: #D3D3D3;
 }
 
-.details-button {
+.details-btn {
   font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont;
   position: absolute;
   right: 5px;
@@ -107,7 +107,7 @@ input[type="text"], input[type="number"] {
   color: #CCC;
 }
 
-.details-button:hover {
+.details-btn:hover {
   background-color: #1fbfb8;
   color: #000;
   border: solid 1px #1fbfb8;
