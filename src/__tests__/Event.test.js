@@ -65,29 +65,29 @@ describe('<Event /> component', () => {
 
   test('expand additional event detals when user clicks on "Details" button', () => {
     EventWrapper.find('.details-button').simulate('click');
-    expect(EventWrapper.find('.event-details')).toHaveLength(1);
+    expect(EventWrapper.find('.extra')).toHaveLength(1);
   });
 
   test('collapse additional event details when user clicks on "Details" button', () => {
     EventWrapper.setState({ expanded: true });
     EventWrapper.find('.details-button').simulate('click');
-    expect(EventWrapper.find('.event-details')).toHaveLength(0);
+    expect(EventWrapper.find('.extra')).toHaveLength(0);
   });
 
   test('render additional event details', () => {
     EventWrapper.setState({ expanded: true });
-    expect(EventWrapper.find('.event-details .address')).toHaveLength(1);
-    expect(EventWrapper.find('.event-details .visibility')).toHaveLength(1);
-    expect(EventWrapper.find('.event-details .link')).toHaveLength(1);
-    expect(EventWrapper.find('.event-details .description')).toHaveLength(1);
+    expect(EventWrapper.find('.extra .address')).toHaveLength(1);
+    expect(EventWrapper.find('.extra .visibility')).toHaveLength(1);
+    expect(EventWrapper.find('.extra .link')).toHaveLength(1);
+    expect(EventWrapper.find('.extra .description')).toHaveLength(1);
   });
 
   test('render additonal event details with correct info', () => {
     EventWrapper.setState({ expanded: true });
-    expect(EventWrapper.find('.event-details .address').text()).toEqual('Park Club Nymphenburg, Stievestrasse 15, 80638, München, Germany'); // this should display all the information a user would need to find this location, these are all venue attributes: event.venue.name, event.venue.address_1, event.venue.city, event.venue.localized_country_name.
-    expect(EventWrapper.find('.event-details .visibility').text()).toEqual('public');
-    expect(EventWrapper.find('.event-details .link').prop('href')).toEqual('https://www.meetup.com/Casual-Squash-Games/events/271160041/');
-    expect(EventWrapper.find('.event-details .description').html()).toEqual('<div class=\"description\"><p>All levels are welcome!</p> <p>We meet at the entrance of Parkclub Nymphenburg at 10:00.<br/>There is 1 court (2-3 people) booked from 10:15 till 11:45<br/>If there are no slots left, use waitlist, we can try to book another court</p> <p>Important: Cancellation is free for 48 hours in advance. So if you RSVP and cannot come, please let me know, so I can cancel the court.<br/>Cancellations on short notice should be paid, to cover court costs.</p></div>');
+    expect(EventWrapper.find('.extra .address').text()).toEqual('Park Club Nymphenburg, Stievestrasse 15, 80638, München, Germany'); // this should display all the information a user would need to find this location, these are all venue attributes: event.venue.name, event.venue.address_1, event.venue.city, event.venue.localized_country_name.
+    expect(EventWrapper.find('.extra .visibility').text()).toEqual('public');
+    expect(EventWrapper.find('.extra .link').prop('href')).toEqual('https://www.meetup.com/Casual-Squash-Games/events/271160041/');
+    expect(EventWrapper.find('.extra .description').html()).toEqual('<div class=\"description\"><p>All levels are welcome!</p> <p>We meet at the entrance of Parkclub Nymphenburg at 10:00.<br/>There is 1 court (2-3 people) booked from 10:15 till 11:45<br/>If there are no slots left, use waitlist, we can try to book another court</p> <p>Important: Cancellation is free for 48 hours in advance. So if you RSVP and cannot come, please let me know, so I can cancel the court.<br/>Cancellations on short notice should be paid, to cover court costs.</p></div>');
   });
 
 });

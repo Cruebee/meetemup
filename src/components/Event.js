@@ -21,7 +21,7 @@ class Event extends Component {
         <p className="name">{event.name}</p>
         <p className="going">{event.yes_rsvp_count} people are attending</p>
         {this.state.expanded &&
-          <div className="event-details">
+          <div className="extra">
             {event.venue && event.venue.name &&
               <p className='address'>
                 {event.venue.name
