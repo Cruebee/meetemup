@@ -5,7 +5,7 @@ import App from '../App';
 import CitySearch from '../components/CitySearch';
 import { mockEvents } from '../mock_events/mock-events';
 
-const feature = loadFeature('./src/features/filterEventsByCity.feature');
+const feature = loadFeature('./src/__features__/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
 
