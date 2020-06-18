@@ -1,6 +1,43 @@
 import jest from 'jest';
 import puppeteer from 'puppeteer';
 
+describe('filter events by city', () => {
+  let browser;
+  let page;
+  beforeAll(async () => {
+    browser = await puppeteer.launch({
+      headless: false,
+      slowMo: 250
+    });
+    page = await browser.newPage();
+    await page.goto('http://localhost:3000/');
+    await page.waitForSelector('.Event');
+  }, 60000);
+
+  afterAll(() => {
+    browser.close();
+  });
+
+  test('by default events will load based on current user location', async () => {
+    const events = await page.$$('.Event');
+    expect(events).toHaveLength(events.length);
+  });
+
+  test('show suggestions when user starts typing in CitySearch textbox', async () => {
+    await page.type('.city', 'Munich');
+    const suggestions = await page.$$('.suggestions li');
+    expect(suggestions).toHaveLength(2);
+  });
+
+  test('user can select a city from the list of suggested cities', async () => {
+    // select the second suggestion via ( :nth-child(2) )
+    await page.click('.suggestions li:nth-child(2)');
+    const suggestions = await page.$$('.suggestions li');
+    expect(suggestions).toHaveLength(0);
+  });
+
+});
+
 describe('show/hide an event details', () => {
 
   let browser;
