@@ -31,6 +31,8 @@ describe('filter events by city', () => {
 
   test('user can select a city from the list of suggested cities', async () => {
     // select the second suggestion via ( :nth-child(2) )
+    await page.hover('.suggestions li:nth-child(1)');
+    await page.hover('.suggestions li:nth-child(2)');
     await page.click('.suggestions li:nth-child(2)');
     const suggestions = await page.$$('.suggestions li');
     expect(suggestions).toHaveLength(0);
