@@ -9,8 +9,8 @@ const feature = loadFeature('./src/__features__/specifyNumberOfEvents.feature');
 
 defineFeature(feature, test => {
 
-  test('When a user has not specified a number of events to be displayed, the default is "32"', ({ given, when, then }) => {
-    given('a user has not selected a specific amount of events to be displayed', () => {
+  test('By default, when a user hansn\'t specified an amount of events to be displayed, show the default of 32', ({ given, when, then }) => {
+    given('a user hasn\'t selected a specific amount of events to be displayed', () => {
 
     });
 
@@ -18,7 +18,7 @@ defineFeature(feature, test => {
 
     });
 
-    then(/^the user will see “(.*)” upcoming events by default$/, (arg0) => {
+    then(/^a user will see a list of (.*) upcoming events by default$/, (arg0) => {
 
     });
   });
@@ -28,13 +28,13 @@ defineFeature(feature, test => {
 
     });
 
-    when('a user changes the number of events to be displayed', () => {
+    when('a user changes the amount of events to be displayed', () => {
 
     });
 
-    then('the user should receive the same number of events specified', () => {
+    then('the user should receive the same amount of events specified', () => {
 
     });
   });
 
-})
+});
