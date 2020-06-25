@@ -103,10 +103,10 @@ class App extends Component {
           }}
         >
           <CartesianGrid />
-          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-          <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+          <XAxis type="category" dataKey="date" name="date" />
+          <YAxis type="number" dataKey="number" name="number of upcoming events" allowDecimals={false} />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter name="A school" data={data} fill="#8884d8" />
+          <Scatter data={this.getData()} fill="#8884d8" />
         </ScatterChart>
         <EventList events={this.state.events} />
         {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
