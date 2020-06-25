@@ -59,7 +59,7 @@ input[type="text"], input[type="number"] {
 .CitySearch {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .suggestions {
@@ -157,7 +157,10 @@ input[type="text"], input[type="number"] {
 
 .recharts-surface {
   margin-top: 1rem;
-  margin-left: -3.6rem;
+}
+
+.recharts-cartesian-grid-bg {
+  margin-left: -2rem;
 }
 
 .search-label {
