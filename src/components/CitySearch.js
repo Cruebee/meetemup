@@ -7,17 +7,24 @@ class CitySearch extends Component {
   state = {
     query: '',
     suggestions: [],
+    infoText: '',
+    warningText: ''
   }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
+    if (!navigator.onLine) {
+      this.props.updateEvents({ warningText: 'Looks like you are offline, please reconnect to search.' });
+    } else {
+      this.props.updateEvents({ warningText: '' })
+    }
     getSuggestions(value).then(suggestions => {
       this.setState({ suggestions });
 
       if (value && suggestions.length === 0) {
         this.setState({
-          infoText: 'We can\'t find the city you are looking for. Please try another city.',
+          infoText: 'We can\'t find the city you are looking for. Please try another city',
         });
       } else {
         this.setState({
@@ -35,7 +42,7 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch">
-        <InfoAlert text={this.state.infoText} />
+        <InfoAlert className="info-alert" text={this.state.infoText} />
         <label className="search-label">City Search</label>
         <input
           type="text"

@@ -4,6 +4,7 @@ import EventList from './components/EventList';
 import CitySearch from './components/CitySearch';
 import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents } from './api';
+import { OfflineAlert, WarningAlert } from './components/Alert';
 
 class App extends Component {
 
@@ -12,11 +13,28 @@ class App extends Component {
     lat: null,
     lon: null,
     page: null,
+    infoText: '',
+    offlineText: ''
   }
 
   componentDidMount() {
     this.updateEvents();
+    this.noEvent();
+    window.addEventListener('online', this.offLineAlert());
   }
+
+  offLineAlert = () => {
+    if (navigator.onLine === false) {
+      this.setState({
+        offlineText: 'You appear to be offline, this list is cached. Please connect to the internet for an updated list.'
+      });
+    } else {
+      this.setState({
+        offlineText: '',
+      });
+    }
+  }
+
 
   updateEvents = (lat, lon, page) => {
     if (lat && lon) {
@@ -33,6 +51,18 @@ class App extends Component {
       );
     }
   }
+  noEvent = () => {
+    if (this.state.events.length === 0) {
+      this.setState({
+        infoText: 'This city isn\'t hosting any events right now, try another city.'
+      });
+    } else {
+      this.setState({
+        infoText: ''
+      })
+    }
+  }
+
 
   render() {
     return (
@@ -40,6 +70,8 @@ class App extends Component {
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
+        {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
+        <OfflineAlert text={this.state.offlineText} />
       </div>
     );
   }
