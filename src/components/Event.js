@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ResponsiveContainer, PieChart, Pie, Cell, Legend, Tooltip, } from 'recharts';
 
 class Event extends Component {
 
@@ -13,7 +14,10 @@ class Event extends Component {
   }
 
   render() {
+
     const event = this.props.event;
+    const data = [{ name: "People attending", value: event.yes_rsvp_count }, { name: "Open slots", value: (event.rsvp_limit - event.yes_rsvp_count) }];
+    const colors = ["#1978a5", "#FF0000"]
 
     return (
       <div className="Event">
@@ -29,6 +33,17 @@ class Event extends Component {
                   + ', ' + event.venue.city
                   + ', ' + event.venue.localized_country_name
                 }
+                <ResponsiveContainer height={150}>
+                  <PieChart>
+                    <Pie data={data} dataKey="value" nameKey="name" cx="50%" outerRadius={32} label >
+                      {
+                        data.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index]} />))
+                      }
+                    </Pie>
+                    <Legend iconSize={10} iconType="triangle" layout="horizontal" verticalAlign="bottom" align="center" />
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
               </p>
             }
             <div className="description" dangerouslySetInnerHTML={{ __html: event.description }} />

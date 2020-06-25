@@ -6,7 +6,7 @@ import NumberOfEvents from './components/NumberOfEvents';
 import { getEvents } from './api';
 import { OfflineAlert, WarningAlert } from './components/Alert';
 import moment from 'moment';
-import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 class App extends Component {
 
@@ -95,19 +95,20 @@ class App extends Component {
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
-        <ScatterChart
-          width={400}
-          height={400}
-          margin={{
-            top: 20, right: 20, bottom: 20, left: 20,
-          }}
-        >
-          <CartesianGrid />
-          <XAxis type="category" dataKey="date" name="date" />
-          <YAxis type="number" dataKey="number" name="number of upcoming events" allowDecimals={false} />
-          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter data={this.getData()} fill="#8884d8" />
-        </ScatterChart>
+        <label className="chart-label">Events This Week</label>
+        <ResponsiveContainer height={400}>
+          <ScatterChart
+            margin={{
+              top: 20, right: 20, bottom: 20, left: 20,
+            }}
+          >
+            <CartesianGrid fill="#FFFFFF" />
+            <XAxis type="category" dataKey="date" name="Date" stroke="#FFFFFF" />
+            <YAxis type="number" dataKey="number" name="Number of Upcoming Events" stroke="#FFFFFF" allowDecimals={false} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter data={this.getData()} fill="#1978a5" />
+          </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={this.state.events} />
         {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
         <OfflineAlert text={this.state.offlineText} />

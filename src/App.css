@@ -43,6 +43,14 @@ input[type="text"], input[type="number"] {
   height: 38px;
 }
 
+.chart-label {
+  background-color: #CCC;
+  padding: 0.5rem;
+  color: #1978a5;
+  border-radius: 4px;
+  font-size: 30px;
+}
+
 .city {
   width: 250px;
   text-align: left;
@@ -51,6 +59,7 @@ input[type="text"], input[type="number"] {
 .CitySearch {
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 }
 
 .suggestions {
@@ -139,6 +148,16 @@ input[type="text"], input[type="number"] {
   margin: 20px 0 50px;
   padding: 0;
   text-align: left;
+}
+
+.NumberOfEvents {
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+.recharts-surface {
+  margin-top: 1rem;
+  margin-left: -3.6rem;
 }
 
 .search-label {
