@@ -61,7 +61,7 @@ class CitySearch extends Component {
       <div className="CitySearch">
         <div className="alert-container">
           <InfoAlert className="info-alert" text={this.state.infoText} />
-          <OfflineAlert className="info-alert" text={this.state.infoText} />
+          <OfflineAlert className="info-alert" text={this.state.offlineText} />
         </div>
         <label className="search-label">City Search</label>
         <input
