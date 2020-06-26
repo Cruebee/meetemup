@@ -93,6 +93,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ResponsiveContainer className="alert-container"><OfflineAlert text={this.state.offlineText} /></ResponsiveContainer>
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <label className="chart-label">Events This Week</label>
@@ -111,7 +112,6 @@ class App extends Component {
         </ResponsiveContainer>
         <EventList events={this.state.events} />
         {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
-        <OfflineAlert text={this.state.offlineText} />
       </div>
     );
   }

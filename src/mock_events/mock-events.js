@@ -14,7 +14,7 @@ const mockEvents = {
     {
       created: 1591614589000,
       duration: 7200000,
-      id: '271160041',
+      id: '271164041',
       name: 'Saturday morning squash in Parkclub Nymphenburg',
       rsvp_limit: 3,
       date_in_series_pattern: false,
@@ -41,7 +41,7 @@ const mockEvents = {
       group: {
         created: 1539632284000,
         name: 'Casual Squash Games',
-        id: 30324826,
+        id: 30324426,
         join_mode: 'approval',
         lat: 48.13999938964844,
         lon: 11.579999923706055,
@@ -88,7 +88,7 @@ const mockEvents = {
       group: {
         created: 1444668795000,
         name: 'Münchner Designer-Stammtisch',
-        id: 19020346,
+        id: 19024346,
         join_mode: 'approval',
         lat: 48.13999938964844,
         lon: 11.579999923706055,
@@ -109,7 +109,7 @@ const mockEvents = {
     {
       created: 1531614589000,
       duration: 7200000,
-      id: '271160043',
+      id: '271160343',
       name: 'Flarper',
       rsvp_limit: 3,
       date_in_series_pattern: false,
@@ -122,7 +122,7 @@ const mockEvents = {
       waitlist_count: 0,
       yes_rsvp_count: 3,
       venue: {
-        id: 25978898,
+        id: 25978838,
         name: 'Park Club Nymphenburg',
         lat: 48.1603889465332,
         lon: 11.513166427612305,
@@ -136,7 +136,7 @@ const mockEvents = {
       group: {
         created: 1539632284000,
         name: 'Casual Squash Games',
-        id: 30324826,
+        id: 30323826,
         join_mode: 'approval',
         lat: 48.13999938964844,
         lon: 11.579999923706055,
@@ -156,7 +156,7 @@ const mockEvents = {
     {
       created: 1591614589000,
       duration: 7200000,
-      id: '271160041',
+      id: '271163041',
       name: 'Farts in the park',
       rsvp_limit: 3,
       date_in_series_pattern: false,
@@ -169,7 +169,7 @@ const mockEvents = {
       waitlist_count: 0,
       yes_rsvp_count: 3,
       venue: {
-        id: 25978898,
+        id: 25938898,
         name: 'Park Club Nymphenburg',
         lat: 48.1603889465332,
         lon: 11.513166427612305,
@@ -183,7 +183,7 @@ const mockEvents = {
       group: {
         created: 1539632284000,
         name: 'Casual Squash Games',
-        id: 30324826,
+        id: 30334826,
         join_mode: 'approval',
         lat: 48.13999938964844,
         lon: 11.579999923706055,
