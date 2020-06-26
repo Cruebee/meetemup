@@ -42,7 +42,7 @@ class CitySearch extends Component {
 
     if (!navigator.onLine) {
       this.setState({
-        offlineText: 'You appear to be offline. Please reconnect to the internet to search for new events and cities.'
+        offlineText: 'Please reconnect to the internet to search for new events and cities.'
       });
     } else {
       this.setState({
