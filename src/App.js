@@ -62,6 +62,7 @@ class App extends Component {
   }
 
 
+
   updateEvents = (lat, lon, page) => {
     if (lat && lon) {
       getEvents(lat, lon, this.state.page).then(events =>
@@ -93,11 +94,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ResponsiveContainer className="alert-container"><OfflineAlert text={this.state.offlineText} /></ResponsiveContainer>
+        <div className="alert-container">
+          <OfflineAlert text={this.state.offlineText} />
+        </div>
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <label className="chart-label">Events This Week</label>
-        <ResponsiveContainer height={400}>
+        <ResponsiveContainer className="chart-container" height={400}>
           <ScatterChart
             margin={{
               top: 20, right: 20, bottom: 20, left: 20,

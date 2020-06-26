@@ -22,7 +22,9 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
-        <ErrorAlert text={this.state.errorText} />
+        <div className="alert-container">
+          <ErrorAlert text={this.state.errorText} />
+        </div>
         <label className="number-label">Show </label>
         <input
           type="number"

@@ -59,7 +59,6 @@ input[type="text"], input[type="number"] {
 .CitySearch {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
 }
 
 .suggestions {
@@ -151,16 +150,12 @@ input[type="text"], input[type="number"] {
 }
 
 .NumberOfEvents {
-  margin: 1rem;
+  margin: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .recharts-surface {
   margin-top: 1rem;
-}
-
-.recharts-cartesian-grid-bg {
-  margin-left: -2rem;
 }
 
 .search-label {
@@ -180,10 +175,18 @@ input[type="text"], input[type="number"] {
 }
 
 .Alert {
-  min-height: 20px;
-  margin: 0.5rem;
+  min-height: 40px;
+  margin: 5px;
 }
 
+.alert-container {
+  margin: auto;
+  width: 50%;
+}
+
+.chart-container {
+  margin-left: -1.9rem;
+}
 
 @media only screen and (max-width: 750px) {
   .EventList {

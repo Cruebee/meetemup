@@ -18,7 +18,6 @@ class Event extends Component {
 
   render() {
 
-    const expanded = this.state.expanded;
     const event = this.props.event;
     const data = [{ name: "Attending", value: event.yes_rsvp_count }, { name: "Vacancy", value: (event.rsvp_limit - event.yes_rsvp_count) }];
     const colors = ["#1978a5", "#FF0000"]
