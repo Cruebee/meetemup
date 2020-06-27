@@ -151,12 +151,9 @@ input[type="text"], input[type="number"] {
 
 .NumberOfEvents {
   margin: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
-.recharts-surface {
-  margin-top: 1rem;
-}
 
 .search-label {
   color: #CCC;
