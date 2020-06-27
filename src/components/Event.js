@@ -27,9 +27,9 @@ class Event extends Component {
         <p className="time">{event.local_time} - {event.local_date}</p>
         <p className="name">{event.name}</p>
         <p className="going">{event.yes_rsvp_count} people are attending</p>
-        <ResponsiveContainer height={150}>
+        <ResponsiveContainer height={150} width={250}>
           <PieChart>
-            <Pie data={data} dataKey="value" nameKey="name" cx="50%" outerRadius={32} label >
+            <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
               {
                 data.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index]} />))
               }
