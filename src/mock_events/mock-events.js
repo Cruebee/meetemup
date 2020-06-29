@@ -120,7 +120,7 @@ const mockEvents = {
       updated: 1591614589000,
       utc_offset: 7200000,
       waitlist_count: 0,
-      yes_rsvp_count: 3,
+      yes_rsvp_count: 0,
       venue: {
         id: 25978838,
         name: 'Park Club Nymphenburg',

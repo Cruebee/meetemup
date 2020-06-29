@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend, Tooltip, } from 'recharts';
 
-const data01 = [
-  { name: 'RSVP', value: 5 },
-  { name: 'Total Spots', value: 10 }
-];
-const Colors = ["#1978a5", "#FF0000"]
-
 class Event extends Component {
 
   state = {
@@ -22,20 +16,19 @@ class Event extends Component {
     }
   }
 
-  getPieData = () => {
-    var limit = this.props.event.rsvp_limit;
-    var rsvp = this.props.event.yes_rsvp_count;
-
-    var data = [
-      { name: "Attending", value: rsvp },
-      { name: "Spots Available", value: limit }
-    ]
-    return data;
-  }
 
   render() {
 
     const event = this.props.event;
+    const data = [
+      {
+        name: "Attending", value: event.yes_rsvp_count
+      },
+      {
+        name: "Vacancy", value: (event.rsvp_limit - event.yes_rsvp_count)
+      }
+    ];
+    const colors = ["#1978a5", "#FF0000"]
 
     return (
       <div className="Event">
@@ -55,9 +48,10 @@ class Event extends Component {
             }
             <ResponsiveContainer height={180}>
               <PieChart>
-                <Pie data={this.getPieData()} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
+                <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
                   {
-                    data01.map((entry, index) => (<Cell key={index} fill={Colors[index % Colors.length]} />))
+                    data.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={colors[index]} />))
                   }
                 </Pie>
                 <Legend iconSize={10} iconType="triangle" layout="horizontal" verticalAlign="bottom" align="center" />
