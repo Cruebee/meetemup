@@ -158,7 +158,7 @@ const mockEvents = {
       duration: 7200000,
       id: '271163041',
       name: 'Farts in the park',
-      rsvp_limit: 3,
+      rsvp_limit: 10,
       date_in_series_pattern: false,
       status: 'upcoming',
       time: 1592036100000,
@@ -167,7 +167,7 @@ const mockEvents = {
       updated: 1591614589000,
       utc_offset: 7200000,
       waitlist_count: 0,
-      yes_rsvp_count: 3,
+      yes_rsvp_count: 10,
       venue: {
         id: 25938898,
         name: 'Park Club Nymphenburg',
