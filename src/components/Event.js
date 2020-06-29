@@ -37,6 +37,7 @@ class Event extends Component {
   render() {
 
     const event = this.props.event;
+    const expanded = this.state.expanded;
 
     return (
       <div className="Event">
@@ -85,7 +86,11 @@ class Event extends Component {
             <a className="link" href={event.link}>Event Link</a>
           </div>
         }
-        <button className="details-btn" onClick={this.handleShowDetails}>Details</button>
+        {expanded &&
+          <button className="details-btn" onClick={this.handleShowDetails}>Hide Details</button>
+        }
+        {!expanded &&
+          <button className="details-btn" onClick={this.handleShowDetails}>Show Details</button>}
       </div>
     );
   }
