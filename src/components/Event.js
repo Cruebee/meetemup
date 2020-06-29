@@ -43,28 +43,7 @@ class Event extends Component {
         <p className="time">{event.local_time} - {event.local_date}</p>
         <p className="name">{event.name}</p>
         <p className="going">{event.yes_rsvp_count} people are attending</p>
-        {event.rsvp_limit && event.yes_rsvp_count &&
-          <ResponsiveContainer height={180}>
-            <PieChart>
-              <Pie
-                data={this.getPieData()}
-                dataKey={"value"}
-                cx="50%"
-                cy="50%"
-                labelLine={false}
-                outerRadius={40}
-                fill="#8884d8"
-                label
-              >
-                {
-                  data01.map((entry, index) => <Cell key={`cell-${index}`} fill={colors[index]} />)
-                }
-              </Pie>
-              <Legend iconSize={10} iconType="triangle" layout="horizontal" verticalAlign="bottom" align="center" />
-              <Tooltip />
-            </PieChart>
-          </ResponsiveContainer>
-        }
+
         {this.state.expanded &&
           <div className="extra">
             {event.venue && event.venue.name &&
@@ -76,6 +55,30 @@ class Event extends Component {
                 }
               </p>
             }
+            <div className="pie-container">
+              {event.rsvp_limit && event.yes_rsvp_count &&
+                <ResponsiveContainer height={180}>
+                  <PieChart>
+                    <Pie
+                      data={this.getPieData()}
+                      dataKey={"value"}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      outerRadius={40}
+                      fill="#8884d8"
+                      label
+                    >
+                      {
+                        data01.map((entry, index) => <Cell key={`cell-${index}`} fill={colors[index]} />)
+                      }
+                    </Pie>
+                    <Legend iconSize={10} iconType="triangle" layout="horizontal" verticalAlign="bottom" align="center" />
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              }
+            </div>
 
             <div className="description" dangerouslySetInnerHTML={{ __html: event.description }} />
             <p className="visibility">{event.visibility}</p>
