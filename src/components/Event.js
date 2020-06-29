@@ -43,7 +43,7 @@ class Event extends Component {
         <p className="time">{event.local_time} - {event.local_date}</p>
         <p className="name">{event.name}</p>
         <p className="going">{event.yes_rsvp_count} people are attending</p>
-        {event.rsvp_limit &&
+        {event.rsvp_limit && event.yes_rsvp_count &&
           <ResponsiveContainer height={180}>
             <PieChart>
               <Pie
