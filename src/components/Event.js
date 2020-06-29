@@ -86,7 +86,7 @@ class Event extends Component {
           </div>
         }
         <button className="details-btn" onClick={this.handleShowDetails}>Details</button>
-      </div >
+      </div>
     );
   }
 }
