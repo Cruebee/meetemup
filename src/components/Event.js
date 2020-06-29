@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend, Tooltip, } from 'recharts';
 
+const data01 = [
+  { name: 'RSVP', value: 5 },
+  { name: 'Total Spots', value: 10 }
+];
+const colors = ["#1978a5", "#FF0000"]
+
 class Event extends Component {
 
   state = {
@@ -16,19 +22,21 @@ class Event extends Component {
     }
   }
 
+  getPieData = () => {
+    var rsvp = this.props.event.yes_rsvp_count;
+    var limit = this.props.event.rsvp_limit;
+
+
+    var data = [
+      { name: "Attending", value: rsvp },
+      { name: "Vacancy", value: limit }
+    ]
+    return data;
+  }
 
   render() {
 
     const event = this.props.event;
-    const data = [
-      {
-        name: "Attending", value: event.yes_rsvp_count
-      },
-      {
-        name: "Vacancy", value: (event.rsvp_limit - event.yes_rsvp_count)
-      }
-    ];
-    const colors = ["#1978a5", "#FF0000"]
 
     return (
       <div className="Event">
@@ -48,9 +56,9 @@ class Event extends Component {
             }
             <ResponsiveContainer height={180}>
               <PieChart>
-                <Pie data={data} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
+                <Pie data={this.getPieData()} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
                   {
-                    data.map((entry, index) => (
+                    data01.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={colors[index]} />))
                   }
                 </Pie>
