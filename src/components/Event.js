@@ -56,7 +56,7 @@ class Event extends Component {
             }
             <ResponsiveContainer height={180}>
               <PieChart>
-                <Pie data={this.getPieData()} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
+                <Pie data={this.getPieData()} dataKey={"value"} nameKey="name" cx="50%" cy="50%" outerRadius={32} label >
                   {
                     data01.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={colors[index]} />))
