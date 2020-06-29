@@ -7,6 +7,7 @@ import { getEvents } from './api';
 import { OfflineAlert, WarningAlert } from './components/Alert';
 import moment from 'moment';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import logo from './img/meetemup-logo.png';
 
 class App extends Component {
 
@@ -97,6 +98,7 @@ class App extends Component {
         <div className="alert-container">
           <OfflineAlert text={this.state.offlineText} />
         </div>
+        <img className="app-logo" src={logo} alt="meetemup logo" />
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <label className="chart-label">Events This Week</label>

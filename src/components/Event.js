@@ -41,8 +41,8 @@ class Event extends Component {
 
     return (
       <div className="Event">
-        <p className="time">{event.local_time} - {event.local_date}</p>
         <p className="name">{event.name}</p>
+        <p className="time">{event.local_time} - {event.local_date}</p>
         <p className="going">{event.yes_rsvp_count} people are attending</p>
 
         {this.state.expanded &&

@@ -98,6 +98,7 @@ input[type="text"], input[type="number"] {
   border-radius: 4px;
   position: relative;
   background-color: #D3D3D3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 10px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .details-btn {
@@ -114,6 +115,7 @@ input[type="text"], input[type="number"] {
   min-height: 3rem;
   background-color: #1978a5;
   color: #CCC;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .details-btn:hover {
@@ -127,6 +129,7 @@ input[type="text"], input[type="number"] {
   font-family: 'Roboto', sans-serif, -apple-system, BlinkMacSystemFont;
   font-size: 18px;
   font-weight: 600;
+
 }
 
 .group-name {
