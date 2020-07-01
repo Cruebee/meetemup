@@ -7,7 +7,13 @@ import { getEvents } from './api';
 import { OfflineAlert, WarningAlert } from './components/Alert';
 import moment from 'moment';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import logo from './img/meetemup-logo.png';
+import meetemupLogo from './img/meetemup-logo.png';
+import logo from './img/cruebee-logo.svg';
+import twitterIcon from './img/twitter_icon.svg';
+import ghIcon from './img/github_icon.svg';
+import linkedInIcon from './img/linkedin_icon.svg';
+import instagramIcon from './img/instagram_icon.svg';
+
 
 class App extends Component {
 
@@ -95,10 +101,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header className="page-header">
+          <a href="https://cruebee.github.io/portfolio-website/" rel="noopener noreferrer" target="_blank">
+            <img src={logo} alt="Cruebee Creations" className="page-header__item" />
+          </a>
+        </header>
         <div className="alert-container">
           <OfflineAlert text={this.state.offlineText} />
         </div>
-        <img className="app-logo" src={logo} alt="meetemup logo" />
+        <img className="app-logo" src={meetemupLogo} alt="meetemup logo" />
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <label className="chart-label">Events This Week</label>
@@ -117,6 +128,14 @@ class App extends Component {
         </ResponsiveContainer>
         <EventList events={this.state.events} />
         {this.state.noEvent && <WarningAlert text={this.state.infoText} />}
+        <footer className="page-footer">
+          <div>
+            <a href="https://github.com/Cruebee" rel="noopener noreferrer" target="_blank"><img src={ghIcon} alt="twitter" className="page-footer__item" /></a>
+            <a href="https://twitter.com/cruebee" rel="noopener noreferrer" target="_blank"><img src={twitterIcon} alt="GitHub" className="page-footer__item" /></a>
+            <a href="https://www.linkedin.com/in/crue-jameson-a8bb0219a/" rel="noopener noreferrer" target="_blank"><img src={linkedInIcon} alt="linkedIn" className="page-footer__item" /></a>
+            <a href="https://www.instagram.com/cruebeedoobie/" rel="noopener noreferrer" target="_blank"><img src={instagramIcon} alt="Instagram" className="page-footer__item" /></a>
+          </div>
+        </footer>
       </div>
     );
   }

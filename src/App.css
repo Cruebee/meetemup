@@ -12,7 +12,6 @@ Red: #FF0000;
 
 .App {
   text-align: center;
-  padding: 2% 5%;
 }
 
 .App * {
@@ -21,6 +20,17 @@ Red: #FF0000;
 
 .app-logo {
   margin-left: 14px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: flex-end;
+  height: 2rem;
+  margin-right: 7px;
+}
+
+.page-header__item {
+  height: 6rem;
 }
 
 ul {
@@ -53,6 +63,7 @@ input[type="text"], input[type="number"] {
   color: #1978a5;
   border-radius: 4px;
   font-size: 30px;
+  margin-left: 16px;
 }
 
 .city {
@@ -63,6 +74,7 @@ input[type="text"], input[type="number"] {
 .CitySearch {
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
 }
 
 .suggestions {
@@ -93,10 +105,10 @@ input[type="text"], input[type="number"] {
 
 .Event {
   min-height: 10rem;
-  max-width: 33rem;
+  max-width: 28rem;
   padding: 0.5rem 0.5rem 3rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 28px;
+  margin-right: 0;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -158,8 +170,7 @@ input[type="text"], input[type="number"] {
 }
 
 .NumberOfEvents {
-  margin: 1.5rem;
-  margin-bottom: 1.2rem;
+  margin: 20px 20px 20px 45px;
 }
 
 
@@ -190,8 +201,20 @@ input[type="text"], input[type="number"] {
 }
 
 .chart-container {
-  margin-left: -1.9rem;
+  margin-left: -21px;
 }
+
+.page-footer {
+  background: #D3D3D3;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
 
 @media only screen and (max-width: 750px) {
   .EventList {
@@ -199,3 +222,26 @@ input[type="text"], input[type="number"] {
     grid-template-columns: 1fr;
   }
 }
+
+@media only screen and (max-width: 750px) {
+  .page-header {
+    display: block;
+    height: 4rem;
+    margin-left: 35px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .Event {
+    margin-left: 20px;
+    margin-right: 4px;
+    max-width: 22rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .page-footer {
+    margin-left: 45px;
+  }
+}
+
