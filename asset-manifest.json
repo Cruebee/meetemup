@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/meetemup/static/css/main.9e4abbc0.chunk.css",
-    "main.js": "/meetemup/static/js/main.162e3f39.chunk.js",
-    "main.js.map": "/meetemup/static/js/main.162e3f39.chunk.js.map",
+    "main.css": "/meetemup/static/css/main.8684adb0.chunk.css",
+    "main.js": "/meetemup/static/js/main.ff814637.chunk.js",
+    "main.js.map": "/meetemup/static/js/main.ff814637.chunk.js.map",
     "runtime-main.js": "/meetemup/static/js/runtime-main.d5565794.js",
     "runtime-main.js.map": "/meetemup/static/js/runtime-main.d5565794.js.map",
-    "static/js/2.b6e3a1c7.chunk.js": "/meetemup/static/js/2.b6e3a1c7.chunk.js",
-    "static/js/2.b6e3a1c7.chunk.js.map": "/meetemup/static/js/2.b6e3a1c7.chunk.js.map",
+    "static/js/2.9f07d85a.chunk.js": "/meetemup/static/js/2.9f07d85a.chunk.js",
+    "static/js/2.9f07d85a.chunk.js.map": "/meetemup/static/js/2.9f07d85a.chunk.js.map",
     "index.html": "/meetemup/index.html",
-    "precache-manifest.2479b837fd6413676cd1bbd0e3bbaad9.js": "/meetemup/precache-manifest.2479b837fd6413676cd1bbd0e3bbaad9.js",
+    "precache-manifest.a265ad5cca17bcec22ea0e8c2f265ba3.js": "/meetemup/precache-manifest.a265ad5cca17bcec22ea0e8c2f265ba3.js",
     "service-worker.js": "/meetemup/service-worker.js",
-    "static/css/main.9e4abbc0.chunk.css.map": "/meetemup/static/css/main.9e4abbc0.chunk.css.map",
-    "static/js/2.b6e3a1c7.chunk.js.LICENSE.txt": "/meetemup/static/js/2.b6e3a1c7.chunk.js.LICENSE.txt",
+    "static/css/main.8684adb0.chunk.css.map": "/meetemup/static/css/main.8684adb0.chunk.css.map",
+    "static/js/2.9f07d85a.chunk.js.LICENSE.txt": "/meetemup/static/js/2.9f07d85a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/meetemup/static/media/background-1.2afb184e.png",
-    "static/media/meetemup-logo.png": "/meetemup/static/media/meetemup-logo.b4e4725e.png"
+    "static/media/cruebee-logo.svg": "/meetemup/static/media/cruebee-logo.044d47b2.svg",
+    "static/media/github_icon.svg": "/meetemup/static/media/github_icon.d59ff44d.svg",
+    "static/media/instagram_icon.svg": "/meetemup/static/media/instagram_icon.6f603381.svg",
+    "static/media/linkedin_icon.svg": "/meetemup/static/media/linkedin_icon.08a1ef57.svg",
+    "static/media/meetemup-logo.png": "/meetemup/static/media/meetemup-logo.b4e4725e.png",
+    "static/media/twitter_icon.svg": "/meetemup/static/media/twitter_icon.f5d5609d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d5565794.js",
-    "static/js/2.b6e3a1c7.chunk.js",
-    "static/css/main.9e4abbc0.chunk.css",
-    "static/js/main.162e3f39.chunk.js"
+    "static/js/2.9f07d85a.chunk.js",
+    "static/css/main.8684adb0.chunk.css",
+    "static/js/main.ff814637.chunk.js"
   ]
 }
